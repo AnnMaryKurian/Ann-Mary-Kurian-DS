@@ -26,12 +26,12 @@ def lineplot(dataline, countries):
 
     # Using a for loop the data for each row and column is ploted
     for cntry in countries:
-        plt.plot(dataline["Year"], dataline[cntry], label=cntry)
+        plt.plot(dataline["Year"], dataline[cntry], label = cntry)
 
     # limits for x axis and y axis are given
     plt.xlim(2007, 2016)
     plt.ylim(0, 40)
-    plt.xticks(dataline["Year"], labels=dataline["Year"], rotation='vertical')
+    plt.xticks(dataline["Year"], labels = dataline["Year"], rotation = 'vertical')
 
     # labelling the x, y axis and title of the graph
     plt.xlabel("Year")
@@ -60,7 +60,7 @@ def piechart(datapie):
 
     # creating the pie chart
     plt.figure()
-    plt.pie(datapie["2016"], labels=datapie["Country"], autopct = "%1.1f%%")
+    plt.pie(datapie["2016"], labels = datapie["Country"], autopct = "%1.1f%%")
     plt.title("Access to Electricity in 2016")  # given title of the figure
     plt.savefig("Figure_Pie_Chart.png")  # saving the figure of pie chart
     plt.show()
@@ -82,9 +82,9 @@ def barplot(databar):
     plt.figure(figsize = (8, 6))
 
     # data for each row and coloumn are fetched and plotted
-    plt.bar(databar["Year"], databar["South Sudan"], label="South Sudan")
+    plt.bar(databar["Year"], databar["South Sudan"], label = "South Sudan")
     plt.title("Access to electricity (% of population)")
-    plt.xticks(databar["Year"], labels=databar["Year"], rotation='vertical')
+    plt.xticks(databar["Year"], labels = databar["Year"], rotation = 'vertical')
 
     # labelling x and y axis
     plt.xlabel("Year")
