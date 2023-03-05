@@ -60,7 +60,7 @@ def piechart(datapie):
 
     # creating the pie chart
     plt.figure()
-    plt.pie(datapie["2016"], labels=datapie["Country"])
+    plt.pie(datapie["2016"], labels=datapie["Country"], autopct = "%1.1f%%")
     plt.title("Access to Electricity in 2016")  # given title of the figure
     plt.savefig("Figure_Pie_Chart.png")  # saving the figure of pie chart
     plt.show()
