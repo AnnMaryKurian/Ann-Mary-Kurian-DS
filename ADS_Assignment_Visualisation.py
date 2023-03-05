@@ -27,12 +27,25 @@ def lineplot(dataline, countries):
     return
 
 
+def piechart(datapie):
+    print("Data for Pie Chart")
+    print(datapie)
+    plt.figure()
+    plt.pie(datapie["2016"], labels=datapie["Country"])
+    plt.title("Access to Electricity")
+    plt.savefig("Figure_Pie_Chart.png")
+    plt.show()
+    return
+
+
 
 
 
 if __name__ == "__main__":
 
   line_data = pd.read_excel("data_line_plot.xlsx")
-
+  pie_data = pd.read_excel("data_pie_chart.xlsx")
+ 
   lineplot(line_data, ["China", "United States", "United Kingdom", "India"])
+  piechart(pie_data)
  
