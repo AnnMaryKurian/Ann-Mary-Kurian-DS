@@ -32,20 +32,32 @@ def piechart(datapie):
     print(datapie)
     plt.figure()
     plt.pie(datapie["2016"], labels=datapie["Country"])
-    plt.title("Access to Electricity")
+    plt.title("Access to electricity")
     plt.savefig("Figure_Pie_Chart.png")
     plt.show()
     return
 
 
-
+def barplot(databar):
+    print("Data for Bar Graph")
+    print(databar)
+    plt.figure(figsize=(8, 6))
+    plt.bar(databar["Year"], databar["South Sudan"], label="South Sudan")
+    plt.title("Access to electricity (% of population)")
+    plt.xticks(databar["Year"], labels=databar["Year"], rotation='vertical')
+    plt.xlabel("Year")
+    plt.ylabel("Electricity Access")
+    plt.legend()
+    plt.savefig("Figure_Bar_Graph.png")
+    plt.show()
+    return
 
 
 if __name__ == "__main__":
 
   line_data = pd.read_excel("data_line_plot.xlsx")
   pie_data = pd.read_excel("data_pie_chart.xlsx")
- 
+  bar_data = pd.read_excel("data_bar_graph.xlsx")
   lineplot(line_data, ["China", "United States", "United Kingdom", "India"])
   piechart(pie_data)
- 
+  barplot(bar_data)
